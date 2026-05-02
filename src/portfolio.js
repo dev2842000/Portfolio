@@ -21,82 +21,91 @@ const illustration = {
 
 const greeting = {
   username: "Dev Kumar",
-  title: "Hi all, I'm Dev",
+  title: "Hi, I'm Dev",
   subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
+    "Product Engineer · AI Integration · 3+ Years 🚀 I build full-stack products that ship to real users — and lately, products that think. My focus is bringing LLMs and AI into practical, production-grade software."
   ),
   resumeLink:
-    "https://docs.google.com/document/d/13_W-pM0b9ueMAG4xU_boldtCc3O5fYT8RkAOeh7ElkI/edit?usp=sharing", // Set to empty to hide the button
-  displayGreeting: true // Set false to hide this section, defaults to true
+    "https://docs.google.com/document/d/13_W-pM0b9ueMAG4xU_boldtCc3O5fYT8RkAOeh7ElkI/edit?usp=sharing",
+  displayGreeting: true
 };
 
 // Social Media Links
 
 const socialMediaLinks = {
-  linkedin: "https://www.linkedin.com/in/dev-kumar-6481521b9/",
+  linkedin: "https://www.linkedin.com/in/sde-dev-kumar/",
   gmail: "dev69440@gmail.com",
-  // Instagram, Twitter and Kaggle are also supported in the links!
-  // To customize icons and social links, tweak src/components/SocialMedia
-  display: true // Set true to display this section, defaults to false
+  display: true
 };
 
 // Skills Section
 
 const skillsSection = {
-  title: "What I do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  title: "About Me",
+  subTitle: "PRODUCT ENGINEER WHO OWNS PROBLEMS END-TO-END — FROM SYSTEM DESIGN TO DEPLOYMENT",
   skills: [
     emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
+      "⚡ Shipped an AI customer support chatbot with RAG architecture, TF-IDF + Claude API — 1,900+ real conversations"
     ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
     emoji(
-      "⚡ Integration of third party services such as cleverTap"
+      "⚡ Built real-time event pipelines (Segment webhooks), mobile attribution (iOS/Android), and user DB pipelines processing 70K+ profiles"
+    ),
+    emoji(
+      "⚡ Comfortable with ambiguity — scoping, system design, shipping, and iterating across the full stack"
     )
   ],
 
-  /* Make Sure to include correct Font Awesome Classname to view your icon
-https://fontawesome.com/icons?d=gallery */
-
   softwareSkills: [
-    {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
-    },
-    {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
-    },
-    {
-      skillName: "wordpress",
-      fontAwesomeClassname: "fab fa-wordpress"
-    },
     {
       skillName: "JavaScript",
       fontAwesomeClassname: "fab fa-js"
     },
     {
-      skillName: "reactjs",
+      skillName: "TypeScript",
+      fontAwesomeClassname: "fab fa-js"
+    },
+    {
+      skillName: "React.js",
       fontAwesomeClassname: "fab fa-react"
     },
     {
-      skillName: "nodejs",
+      skillName: "React Native",
+      fontAwesomeClassname: "fab fa-react"
+    },
+    {
+      skillName: "Node.js",
       fontAwesomeClassname: "fab fa-node"
     },
     {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
-    },
-    {
-      skillName: "sql-database",
+      skillName: "PostgreSQL",
       fontAwesomeClassname: "fas fa-database"
     },
     {
-      skillName: "python",
+      skillName: "MongoDB",
+      fontAwesomeClassname: "fas fa-database"
+    },
+    {
+      skillName: "Redis",
+      fontAwesomeClassname: "fas fa-server"
+    },
+    {
+      skillName: "Python",
       fontAwesomeClassname: "fab fa-python"
     },
+    {
+      skillName: "Git",
+      fontAwesomeClassname: "fab fa-git-alt"
+    },
+    {
+      skillName: "Claude API",
+      fontAwesomeClassname: "fas fa-robot"
+    },
+    {
+      skillName: "Segment",
+      fontAwesomeClassname: "fas fa-plug"
+    }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
 // Education Section
@@ -124,41 +133,81 @@ const educationInfo = {
 // Your top 3 proficient stacks/tech experience
 
 const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
+  viewSkillBars: true,
   experience: [
     {
-      Stack: "Frontend/UX", //Insert stack or technology you have experience in
-      progressPercentage: "100%" //Insert relative proficiency in percentage
-    },
-    {
-      Stack: "Backend",
+      Stack: "Backend (Node.js / APIs / Microservices)",
       progressPercentage: "90%"
     },
     {
-      Stack: "Programming",
-      progressPercentage: "70%"
+      Stack: "Frontend (React / React Native / Next.js)",
+      progressPercentage: "85%"
+    },
+    {
+      Stack: "AI Integration (Claude API / RAG / LLMs)",
+      progressPercentage: "80%"
+    },
+    {
+      Stack: "Data & Infra (PostgreSQL / Redis / Pipelines)",
+      progressPercentage: "78%"
     }
   ],
-  displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
+  displayCodersrank: false
 };
 
 // Work experience section
 
 const workExperiences = {
-  display: true, //Set it to true to show workExperiences Section
+  display: true,
   experience: [
     {
-      role: "FullStack Software Engineer",
-      company: "Hestabit Technologies pvt. ltd.",
-      companylogo: require("./assets/images/hestabit.jpg"),
-      date: "August 2022 – Present",
+      role: "SDE-I — Full Stack Engineer",
+      company: "Getbit / Crobo",
+      companylogo: require("./assets/images/croboLogo.png"),
+      date: "March 2025 – Present",
+      desc: "Cross-border remittance platform (USA → India). Shipped AI-powered features, real-time data pipelines, and mobile integrations in a fast-moving fintech product team.",
+      descBullets: [
+        "Built AI customer support chatbot (RAG + TF-IDF + Claude API) — 1,900+ real conversations",
+        "Engineered real-time event pipeline via Segment webhooks with CRM and analytics sync",
+        "Built mobile attribution system across iOS and Android (AppsFlyer integration)",
+        "Shipped referral program, milestone reward system, and user DB pipeline (70K+ profiles)"
+      ]
     },
     {
-      role: "FullStack Python Developer",
-      company: "Code Planet Technologies pvt. ltd.",
-      companylogo: require("./assets/images/codePlanet.png"),
-      date: "November 2021 – April 2022",
+      role: "Full Stack Engineer (SDE-I)",
+      company: "Flot Pvt. Ltd.",
+      companylogo: require("./assets/images/flotLogo.png"),
+      date: "November 2024 – March 2025",
+      desc: "Built core lending platform modules with complex business rule validation. Delivered operational dashboards used by 15–20 team members for loan tracking and workflow management.",
+      descBullets: [
+        "Built lending modules with compliance and regulatory validation",
+        "Designed dashboards for loan tracking used by 15–20 team members",
+        "Collaborated in agile sprints with QA and product teams"
+      ]
     },
+    {
+      role: "Trainee Software Developer",
+      company: "Hestabit Technologies Pvt. Ltd.",
+      companylogo: require("./assets/images/hestabit.jpg"),
+      date: "August 2022 – April 2024",
+      desc: "Delivered multiple client projects end-to-end using MERN stack and Next.js. Built a chatbot system serving 5,000+ users and resolved 50+ production bugs across client applications.",
+      descBullets: [
+        "Built customer-facing chatbot serving 5,000+ users",
+        "Delivered 10+ client projects from requirements to production",
+        "Resolved 50+ production bugs improving system stability"
+      ]
+    },
+    {
+      role: "Software Intern",
+      company: "Code Planet Technologies Pvt. Ltd.",
+      companylogo: require("./assets/images/codePlanet.png"),
+      date: "November 2021 – July 2022",
+      desc: "Optimized Python automation scripts improving execution efficiency by 30%. Managed and optimized MySQL databases with 10,000+ records.",
+      descBullets: [
+        "Improved Python script execution efficiency by 30%",
+        "Optimized MySQL queries for 10,000+ record databases"
+      ]
+    }
   ]
 };
 
@@ -173,45 +222,44 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Big Projects",
-  subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  title: "Projects",
+  subtitle: "FINTECH PLATFORMS AND PERSONAL PROJECTS I'VE BUILT",
   projects: [
     {
-      image: require("./assets/images/topCompanion.webp"),
-      projectName: "TopCompanion",
-      projectDesc: "UK based Escort Service",
+      image: require("./assets/images/fittrack.png"),
+      projectName: "FitTrack",
+      projectDesc: "A full-stack fitness tracking web app with workout logging, progress visualization, and user dashboards. Built with React and Node.js.",
       footerLink: [
         {
           name: "Visit Website",
-          url: "https://www.topcompanions.com/"
-        }
-        //  you can add extra buttons here.
-      ]
-    },
-    {
-      image: require("./assets/images/nicol&co.webp"),
-      projectName: "nicol&Co",
-      projectDesc: "UK based Property Selling Platform",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "https://www.nicolandco.co.uk/"
+          url: "https://fittrack-frontend-three.vercel.app/"
         }
       ]
     },
     {
-      image: require("./assets/images/ovaTime.webp"),
-      projectName: "OvaTime",
-      projectDesc: "Fitness Mobile Application",
+      image: require("./assets/images/croboLogo.png"),
+      projectName: "Remittance Platform (Getbit/Crobo)",
+      projectDesc: "Cross-border money transfer platform processing USA → India payments with real-time transaction APIs, compliance workflows, and Redis-powered performance optimization.",
       footerLink: [
         {
-          name: "Visit Website",
-          url: "https://apps.apple.com/lc/app/ovatime/id1485844877"
+          name: "View Details",
+          url: "https://www.crobo.money"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/flotLogo.png"),
+      projectName: "Lending Platform (Flot)",
+      projectDesc: "Core lending platform with business rule validation, regulatory compliance modules, and operational dashboards actively used by 15–20 team members for loan tracking.",
+      footerLink: [
+        {
+          name: "View Details",
+          url: "https://myflot.com"
         }
       ]
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
 // Achievement Section
@@ -334,7 +382,7 @@ const podcastSection = {
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
+    "Currently open to global and remote roles. Interested in Japan 🇯🇵 (JLPT N5 in progress, open to relocation with visa sponsorship).",
   number: "+91-9711642938",
   email_address: "dev69440@gmail.com"
 };
@@ -367,3 +415,7 @@ export {
   twitterDetails,
   isHireable
 };
+;
+;
+;
+
