@@ -3,38 +3,50 @@
 .experience-card {
   position: relative;
   background-color: $lightBackground2;
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
   border: 1px solid $lightBorder1;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
 }
 
 .experience-card-dark {
   position: relative;
   background-color: $darkBackground;
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  border-radius: 10px;
-  border: 1px solid $lightBorder1;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
 }
 
 .experience-card:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+  transform: translateY(-4px);
+  box-shadow: 0px 12px 40px rgba(37, 99, 235, 0.15);
+}
+
+.experience-card-dark:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 12px 40px rgba(37, 99, 235, 0.2);
 }
 
 .experience-banner {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 150%;
-  background: $experienceCardBannerLG;
-  border-radius: 10px 10px 0px 0px;
-  -webkit-filter: blur(0px);
-  -moz-filter: blur(0px);
-  -o-filter: blur(0px);
-  -ms-filter: blur(0px);
-  filter: blur(0px);
-  height: 11rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #2563eb 100%);
+  border-radius: 12px 12px 0px 0px;
+  height: 10rem;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #2563eb, #06b6d4);
+  }
 }
 
 .experience-blurred_div {
@@ -79,16 +91,19 @@
 
 .experience-roundedimg {
   position: absolute;
-  object-fit: cover;
+  object-fit: contain;
   left: 0;
   right: 0;
-  top: 7rem;
+  top: 6.5rem;
   margin-left: auto;
   margin-right: auto;
-  width: 8rem;
-  height: 8rem;
-  box-shadow: 0 0.5rem 1rem $lightBoxShadowDarker;
+  width: 7rem;
+  height: 7rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   border-radius: 50%;
+  background-color: #ffffff;
+  padding: 6px;
+  border: 3px solid #ffffff;
 }
 
 .experience-text-role {

@@ -2,27 +2,30 @@
 
 .main-button {
   background-color: $buttonColor;
-  border: solid 1px $buttonColor;
-  color: $textColorDark;
-  font-weight: 700;
+  border: solid 2px $buttonColor;
+  color: #ffffff;
+  font-weight: 600;
   width: max-content;
-  padding: 13px 22px;
+  padding: 12px 28px;
   margin-right: 50px;
   text-transform: uppercase;
-  border-radius: 6px;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
   text-align: center;
   text-decoration: none;
   display: block;
   margin-top: 20px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.3s ease-in-out 0s;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
 }
 .main-button:hover {
-  background-color: $darkBoxShadow2;
+  background-color: transparent;
   color: $buttonColor;
-  transition: all 0.3s ease 0s;
-  transform: translateY(-3px);
+  transition: all 0.25s ease;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
 }
 .project-button {
   display: flex;
