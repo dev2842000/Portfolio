@@ -1,67 +1,49 @@
-import React, {useContext} from "react";
-import {Fade} from "react-reveal";
-import emoji from "react-easy-emoji";
+import React from "react";
 import "./Greeting.scss";
-import landingPerson from "../../assets/lottie/landingPerson";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
-import SocialMedia from "../../components/socialMedia/SocialMedia";
-import Button from "../../components/button/Button";
-
-import {illustration, greeting} from "../../portfolio";
-import StyleContext from "../../contexts/StyleContext";
+import {greeting, socialMediaLinks} from "../../portfolio";
+import HeroCanvas from "../../components/heroCanvas/HeroCanvas";
 
 export default function Greeting() {
-  const {isDark} = useContext(StyleContext);
-  if (!greeting.displayGreeting) {
-    return null;
-  }
+  if (!greeting.displayGreeting) return null;
   return (
-    <Fade bottom duration={1000} distance="40px">
-      <div className="greet-main" id="greeting">
-        <div className="greeting-main">
-          <div className="greeting-text-div">
-            <div>
-              <h1
-                className={isDark ? "dark-mode greeting-text" : "greeting-text"}
-              >
-                {" "}
-                {greeting.title}{" "}
-                <span className="wave-emoji">{emoji("👋")}</span>
-              </h1>
-              <p
-                className={
-                  isDark
-                    ? "dark-mode greeting-text-p"
-                    : "greeting-text-p subTitle"
-                }
-              >
-                {greeting.subTitle}
-              </p>
-              <SocialMedia />
-              <div className="button-greeting-div">
-                <Button text="Contact me" href="#contact" />
-                {greeting.resumeLink && (
-                  <Button
-                    text="See my resume"
-                    newTab={true}
-                    href={greeting.resumeLink}
-                  />
-                )}
-              </div>
-            </div>
+    <section id="hero">
+      <div className="hero-overlay" />
+      <div className="hero-grid-bg" />
+      <div className="hero-grad" />
+      <div className="hero-inner">
+        <div className="hero-text">
+          <div className="hero-badge">
+            <span className="h-dot" />
+            Open to opportunities
           </div>
-          <div className="greeting-image-div">
-            {illustration.animated ? (
-              <DisplayLottie animationData={landingPerson} />
-            ) : (
-              <img
-                alt="man sitting on table"
-                src={require("../../assets/images/manOnTable.svg")}
-              ></img>
+          <h1 className="hero-name">Hi, I'm Dev</h1>
+          <p className="hero-role">Full Stack (AI-Focused) · 3.5+ Years</p>
+          <p className="hero-sub">{greeting.subTitle}</p>
+          <div className="hero-actions">
+            <a href="#contact" className="btn-p">Contact me</a>
+            {greeting.resumeLink && (
+              <a href={greeting.resumeLink} target="_blank" rel="noopener noreferrer" className="btn-o">Resume ↗</a>
+            )}
+          </div>
+          <div className="hero-socials">
+            {socialMediaLinks.linkedin && (
+              <a href={socialMediaLinks.linkedin} target="_blank" rel="noopener noreferrer" className="soc" title="LinkedIn">
+                <i className="fab fa-linkedin-in" />
+              </a>
+            )}
+            <a href="https://github.com/dev2842000" target="_blank" rel="noopener noreferrer" className="soc" title="GitHub">
+              <i className="fab fa-github" />
+            </a>
+            {socialMediaLinks.gmail && (
+              <a href={`mailto:${socialMediaLinks.gmail}`} className="soc" title="Email">
+                <i className="fas fa-envelope" />
+              </a>
             )}
           </div>
         </div>
       </div>
-    </Fade>
+      <div className="hero-canvas-wrap"><HeroCanvas /></div>
+
+    </section>
   );
 }
