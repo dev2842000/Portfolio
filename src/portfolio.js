@@ -8,7 +8,7 @@ import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your
 // Splash Screen
 
 const splashScreen = {
-  enabled: true, // set false to disable splash screen
+  enabled: false, // set false to disable splash screen
   animation: splashAnimation,
   duration: 2000 // Set animation duration as per your animation
 };
@@ -26,7 +26,7 @@ const greeting = {
     "Product Engineer · AI Integration · 3+ Years 🚀 I build full-stack products that ship to real users — and lately, products that think. My focus is bringing LLMs and AI into practical, production-grade software."
   ),
   resumeLink:
-    "https://docs.google.com/document/d/13_W-pM0b9ueMAG4xU_boldtCc3O5fYT8RkAOeh7ElkI/edit?usp=sharing",
+    "https://docs.google.com/document/d/1NiHKONLozd4OUDcXS0s8VUWjkSkeg0RcE5MIN4cl3jk/edit?usp=sharing",
   displayGreeting: true
 };
 
@@ -49,6 +49,9 @@ const skillsSection = {
     ),
     emoji(
       "⚡ Built real-time event pipelines (Segment webhooks), mobile attribution (iOS/Android), and user DB pipelines processing 70K+ profiles"
+    ),
+    emoji(
+      "⚡ Built a multi-agent orchestration system (Jira Autopilot) using Claude API — auto-fixes Jira tickets, opens PRs, and posts results back to Jira"
     ),
     emoji(
       "⚡ Comfortable with ambiguity — scoping, system design, shipping, and iterating across the full stack"
@@ -223,8 +226,44 @@ const openSource = {
 
 const bigProjects = {
   title: "Projects",
-  subtitle: "FINTECH PLATFORMS AND PERSONAL PROJECTS I'VE BUILT",
+  subtitle: "AI AGENTS, FINTECH PLATFORMS, AND PERSONAL PROJECTS I'VE BUILT",
   projects: [
+    {
+      image: require("./assets/images/blurshield.jpeg"),
+      projectName: "BlurShield",
+      projectDesc:
+        "Chrome extension that auto-blurs sensitive websites the moment you start screen sharing on Meet, Zoom, or Teams. Add any domain once — zero friction mid-call. Built with Chrome Extension Manifest V3.",
+      footerLink: [
+        {
+          name: "View on GitHub",
+          url: "https://github.com/dev2842000/blurshield"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/pr-review.png"),
+      projectName: "Multi-Agent PR Reviewer",
+      projectDesc:
+        "4 specialist AI agents (Security, Performance, Style, Tests) that run in parallel on every PR via GitHub Actions. Built with Claude API Agent SDK — each agent posts inline review comments automatically.",
+      footerLink: [
+        {
+          name: "View on GitHub",
+          url: "https://github.com/dev2842000/multi-agent-pr-reviewer"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/jira-autopilot.png"),
+      projectName: "Jira Autopilot",
+      projectDesc:
+        "Multi-agent AI system that auto-fixes Jira tickets. Fetches open tickets via JQL, generates a fix roadmap, runs parallel backend/frontend agents with Claude API, runs Cypress E2E verification, opens GitHub PRs, and posts results back to Jira — daily at 8 AM.",
+      footerLink: [
+        {
+          name: "View on GitHub",
+          url: "https://github.com/dev2842000/jira-autopilot"
+        }
+      ]
+    },
     {
       image: require("./assets/images/fittrack.png"),
       projectName: "FitTrack",
@@ -395,6 +434,15 @@ const twitterDetails = {
 };
 
 const isHireable = true; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
+
+export const skillCategories = [
+  {label: "🤖 AI & Gen AI", tags: ["LLMs", "Agentic AI", "Prompt Engineering", "Claude API", "MCP"]},
+  {label: "🎨 Frontend", tags: ["React.js", "Next.js", "React Native", "TypeScript", "JavaScript", "Tailwind CSS", "Material UI", "Ionic", "TanStack Query"]},
+  {label: "⚙️ Backend", tags: ["Node.js", "Python (FastAPI)", "REST APIs", "JWT", "OAuth", "Microservices"]},
+  {label: "🗄️ Databases", tags: ["MongoDB", "PostgreSQL", "MSSQL", "Redis", "Elasticsearch", "Vector Databases", "GraphQL"]},
+  {label: "☁️ Cloud & DevOps", tags: ["AWS", "Docker", "CI/CD", "GitHub Actions", "Git", "Cypress", "Swagger"]},
+  {label: "🔌 Platforms", tags: ["Segment", "Mixpanel", "CleverTap", "AppsFlyer", "Snowflake", "Freshchat", "Vercel", "Netlify"]},
+];
 
 export {
   illustration,
