@@ -1,42 +1,35 @@
-import React, {useContext} from "react";
+import React from "react";
 import "./WorkExperience.scss";
-import ExperienceCard from "../../components/experienceCard/ExperienceCard";
 import {workExperiences} from "../../portfolio";
-import {Fade} from "react-reveal";
-import StyleContext from "../../contexts/StyleContext";
 
 export default function WorkExperience() {
-  const {isDark} = useContext(StyleContext);
-  if (workExperiences.display) {
-    return (
-      <div id="experience">
-        <Fade bottom duration={1000} distance="20px">
-          <div className="experience-container" id="workExperience">
-            <div>
-              <h1 className="experience-heading">Experiences</h1>
-              <div className="experience-cards-div">
-                {workExperiences.experience.map((card, i) => {
-                  return (
-                    <ExperienceCard
-                      key={i}
-                      isDark={isDark}
-                      cardInfo={{
-                        company: card.company,
-                        desc: card.desc,
-                        date: card.date,
-                        companylogo: card.companylogo,
-                        role: card.role,
-                        descBullets: card.descBullets
-                      }}
-                    />
-                  );
-                })}
+  if (!workExperiences.display) return null;
+  return (
+    <section id="experience">
+      <div className="si">
+        <p className="slabel reveal">Career</p>
+        <h2 className="stitle reveal">Experience</h2>
+        <div className="timeline reveal">
+          {workExperiences.experience.map((exp, i) => (
+            <div key={i} className="exp-card">
+              <div className="exp-head">
+                <img src={exp.companylogo} alt={exp.company} className="exp-logo" />
+                <div>
+                  <div className="exp-role">{exp.role}</div>
+                  <div className="exp-co">{exp.company}</div>
+                  <div className="exp-date">{exp.date}</div>
+                </div>
               </div>
+              <p className="exp-desc">{exp.desc}</p>
+              {exp.descBullets && (
+                <ul className="exp-bul">
+                  {exp.descBullets.map((b, j) => <li key={j}>{b}</li>)}
+                </ul>
+              )}
             </div>
-          </div>
-        </Fade>
+          ))}
+        </div>
       </div>
-    );
-  }
-  return null;
+    </section>
+  );
 }
