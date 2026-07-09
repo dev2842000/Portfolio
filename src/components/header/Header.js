@@ -1,86 +1,64 @@
-import React, {useContext} from "react";
-import Headroom from "react-headroom";
+import React, {useContext, useState, useEffect} from "react";
 import "./Header.scss";
-import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import StyleContext from "../../contexts/StyleContext";
-import {
-  greeting,
-  workExperiences,
-  skillsSection,
-  openSource,
-  blogSection,
-  talkSection,
-  achievementSection
-} from "../../portfolio";
+import GooeyNav from "../gooeyNav/GooeyNav";
 
-function Header() {
-  const {isDark} = useContext(StyleContext);
-  const viewExperience = workExperiences.display;
-  const viewOpenSource = openSource.display;
-  const viewSkills = skillsSection.display;
-  const viewAchievement = achievementSection.display;
-  const viewBlog = blogSection.display;
-  const viewTalks = talkSection.display;
+const SECTIONS = ["hero", "about", "experience", "projects", "education", "contact"];
+const LABELS   = ["Home", "About", "Experience", "Projects", "Education", "Contact"];
+
+function Header({menuOpen, setMenuOpen}) {
+  const {isDark, changeTheme} = useContext(StyleContext);
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) {
+          const idx = SECTIONS.indexOf(e.target.id);
+          if (idx !== -1) setActiveIdx(idx);
+        }
+      }),
+      {threshold: 0.2, rootMargin: "-60px 0px -40% 0px"}
+    );
+    SECTIONS.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+    return () => io.disconnect();
+  }, []);
 
   return (
-    <Headroom>
-      <header className={isDark ? "dark-menu header" : "header"}>
-        <a href="/" className="logo">
-          <span className="grey-color"> &lt;</span>
-          <span className="logo-name">{greeting.username}</span>
-          <span className="grey-color">/&gt;</span>
-        </a>
-        <input className="menu-btn" type="checkbox" id="menu-btn" />
-        <label
-          className="menu-icon"
-          htmlFor="menu-btn"
-          style={{color: "white"}}
-        >
-          <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
-        </label>
-        <ul className={isDark ? "dark-menu menu" : "menu"}>
-          {viewSkills && (
-            <li>
-              <a href="#skills">Skills</a>
-            </li>
-          )}
-          {viewExperience && (
-            <li>
-              <a href="#experience">Work Experiences</a>
-            </li>
-          )}
-          {viewOpenSource && (
-            <li>
-              <a href="#opensource">Open Source</a>
-            </li>
-          )}
-          {viewAchievement && (
-            <li>
-              <a href="#achievements">Achievements</a>
-            </li>
-          )}
-          {viewBlog && (
-            <li>
-              <a href="#blogs">Blogs</a>
-            </li>
-          )}
-          {viewTalks && (
-            <li>
-              <a href="#talks">Talks</a>
-            </li>
-          )}
-          <li>
-            <a href="#contact">Contact Me</a>
-          </li>
-          <li>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a>
-              <ToggleSwitch />
-            </a>
-          </li>
-        </ul>
-      </header>
-    </Headroom>
+    <>
+      <nav className="nav">
+        <div className="scroll-progress" id="scroll-progress" />
+        <a href="#hero" className="nav-logo">DK</a>
+        <GooeyNav />
+        <div className="nav-right">
+          <button className="theme-btn" onClick={changeTheme} aria-label="Toggle theme">
+            {isDark ? "☀️" : "🌙"}
+          </button>
+          <button
+            className={`ham-btn${menuOpen ? " open" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menu"
+          >
+            <span/><span/><span/>
+          </button>
+        </div>
+      </nav>
+      <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
+        {SECTIONS.map((id, i) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className={activeIdx === i ? "active" : ""}
+            onClick={() => setMenuOpen(false)}
+          >
+            {LABELS[i]}
+          </a>
+        ))}
+      </div>
+    </>
   );
 }
 export default Header;
