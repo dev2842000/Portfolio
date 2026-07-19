@@ -1,5 +1,7 @@
 import { defineConfig, transformWithEsbuild } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import fs from "fs";
+import path from "path";
 
 export default defineConfig({
   envPrefix: ["VITE_", "REACT_APP_"],
@@ -21,6 +23,15 @@ export default defineConfig({
       },
     },
     react({ include: /\.(js|jsx|ts|tsx)$/ }),
+    {
+      name: "sitemap-lastmod",
+      closeBundle() {
+        const sitemap = path.resolve(__dirname, "dist/client/sitemap.xml");
+        if (!fs.existsSync(sitemap)) return;
+        const today = new Date().toISOString().slice(0, 10);
+        fs.writeFileSync(sitemap, fs.readFileSync(sitemap, "utf8").replace(/<lastmod>.*<\/lastmod>/, `<lastmod>${today}</lastmod>`));
+      },
+    },
   ],
   optimizeDeps: {
     esbuildOptions: { loader: { ".js": "jsx" } },
