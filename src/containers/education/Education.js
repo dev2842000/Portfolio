@@ -13,7 +13,7 @@ export default function Education() {
           {educationInfo.schools.map((school, i) => (
             <div key={i} className="edu-card">
               <div className="edu-head">
-                <img src={school.logo} alt={school.schoolName} className="edu-logo" />
+                <img src={school.logo} alt={school.schoolName} className="edu-logo" loading="lazy" />
                 <div>
                   <div className="edu-school">{school.schoolName}</div>
                   <div className="edu-deg">{school.subHeader}</div>

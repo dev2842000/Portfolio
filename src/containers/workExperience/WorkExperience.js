@@ -13,7 +13,7 @@ export default function WorkExperience() {
           {workExperiences.experience.map((exp, i) => (
             <div key={i} className="exp-card">
               <div className="exp-head">
-                <img src={exp.companylogo} alt={exp.company} className="exp-logo" />
+                <img src={exp.companylogo} alt={exp.company} className="exp-logo" loading="lazy" />
                 <div>
                   <div className="exp-role">{exp.role}</div>
                   <div className="exp-co">{exp.company}</div>

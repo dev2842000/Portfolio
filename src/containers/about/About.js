@@ -1,6 +1,6 @@
 import React from "react";
 import {skillsSection} from "../../portfolio";
-import aboutPhoto from "../../assets/images/about-me.JPG";
+import aboutPhoto from "../../assets/images/about-me.webp";
 
 export default function About() {
   if (!skillsSection.display) return null;

@@ -13,7 +13,7 @@ export default function StartupProject() {
         <div className="proj-grid reveal">
           {bigProjects.projects.map((project, i) => (
             <div key={i} className="proj-card" onClick={() => project.footerLink?.[0]?.url && window.open(project.footerLink[0].url, "_blank")}>
-              {project.image && <img src={project.image} alt={project.projectName} className="proj-img" />}
+              {project.image && <img src={project.image} alt={project.projectName} className="proj-img" loading="lazy" />}
               <div className="proj-body">
                 <div className="proj-name">{project.projectName}</div>
                 <p className="proj-desc">{project.projectDesc}</p>
