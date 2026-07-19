@@ -124,8 +124,8 @@ const Main = () => {
             <BeyondCode />
             <Contact />
             <Footer />
-            <button className="back-top" id="back-top" onClick={() => window.scrollTo({top: 0, behavior: "smooth"})}>
-              <i className="fas fa-chevron-up" />
+            <button className="back-top" id="back-top" aria-label="Back to top" onClick={() => window.scrollTo({top: 0, behavior: "smooth"})}>
+              <i className="fas fa-chevron-up" aria-hidden="true" />
             </button>
           </>
         )}
