@@ -7,6 +7,7 @@ import Skills from "./skills/Skills";
 import WorkExperience from "./workExperience/WorkExperience";
 import StartupProject from "./StartupProjects/StartupProject";
 import Education from "./education/Education";
+import BeyondCode from "./beyondCode/BeyondCode";
 import Contact from "./contact/Contact";
 import Footer from "../components/footer/Footer";
 import SplashScreen from "./splashScreen/SplashScreen";
@@ -16,8 +17,12 @@ import {useLocalStorage} from "../hooks/useLocalStorage";
 import "./Main.scss";
 
 const Main = () => {
-  const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
-  const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
+  const [isDark, setIsDark] = useLocalStorage(
+    "isDark",
+    typeof window !== "undefined"
+      ? window.matchMedia("(prefers-color-scheme: dark)").matches
+      : false
+  );
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const curtainRef = useRef(null);
@@ -125,6 +130,7 @@ const Main = () => {
             <WorkExperience />
             <StartupProject />
             <Education />
+            <BeyondCode />
             <Contact />
             <Footer />
             <button className="back-top" id="back-top" onClick={() => window.scrollTo({top: 0, behavior: "smooth"})}>

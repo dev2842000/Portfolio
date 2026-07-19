@@ -1,0 +1,46 @@
+# Dev Kumar — Product Engineer & AI Builder
+
+> Product engineer with 3+ years shipping full-stack and AI-powered products to real users. Currently at Getbit/Crobo (cross-border fintech, USA→India). Self-taught from a humanities background — learned to build by shipping, not studying.
+
+## Current Role
+
+- **Company**: Getbit / Crobo — cross-border remittance platform (USA → India)
+- **Title**: SDE-I, Full Stack Engineer
+- **Since**: March 2025
+
+## What I've Shipped (with numbers)
+
+- AI customer support chatbot — RAG architecture, TF-IDF + Claude API — 1,900+ real conversations in production
+- Real-time event pipeline via Segment webhooks — CRM and analytics sync
+- Mobile attribution system — iOS and Android (AppsFlyer integration)
+- User DB pipeline — 70,000+ profiles
+- Referral program and milestone reward system
+
+## Skills
+
+**AI / Gen AI**: LLMs, Agentic AI, Prompt Engineering, Claude API, MCP, RAG, Vector Databases
+**Frontend**: React.js, Next.js, React Native, TypeScript, JavaScript, Tailwind CSS
+**Backend**: Node.js, Python (FastAPI), REST APIs, Microservices, JWT, OAuth
+**Databases**: PostgreSQL, MongoDB, Redis, MSSQL, Elasticsearch, GraphQL
+**Cloud & DevOps**: AWS, Docker, CI/CD, GitHub Actions
+**Platforms**: Segment, Mixpanel, AppsFlyer, CleverTap, Snowflake, Freshchat
+
+## Side Projects
+
+- **Multi-Agent PR Reviewer** — 4 specialist AI agents (Security, Performance, Style, Tests) running in parallel on every PR via GitHub Actions. Built with Claude API Agent SDK. https://github.com/dev2842000/multi-agent-pr-reviewer
+- **Jira Autopilot** — Multi-agent system that auto-fixes Jira tickets, opens PRs, runs Cypress E2E, posts results back to Jira — daily at 8 AM. https://github.com/dev2842000/jira-autopilot
+- **BlurShield** — Chrome extension that auto-blurs sensitive websites the moment you start screen sharing. https://github.com/dev2842000/blurshield
+
+## Background
+
+- Education: BA, Rajdhani College, Delhi University (2019–2022) — not a CS degree
+- Learning Japanese (JLPT N5, working toward N4)
+- Open to global and remote roles
+
+## Links
+
+- Portfolio: https://devk-portfolio.netlify.app/
+- GitHub: https://github.com/dev2842000
+- LinkedIn: https://www.linkedin.com/in/sde-dev-kumar/
+- Email: dev69440@gmail.com
+- Resume: https://docs.google.com/document/d/1NiHKONLozd4OUDcXS0s8VUWjkSkeg0RcE5MIN4cl3jk/edit?usp=sharing

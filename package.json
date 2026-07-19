@@ -5,31 +5,27 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "colorthief": "^2.3.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6",
     "gh-pages": "^2.1.1",
     "jest-canvas-mock": "^2.3.1",
     "lottie-react": "^2.4.0",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-easy-emoji": "^1.8.1",
     "react-headroom": "^3.0.0",
     "react-reveal": "^1.2.2",
-    "react-scripts": "^5.0.1",
-    "react-test-renderer": "^16.10.2",
     "react-twitter-embed": "3.0.3",
     "sass": "^1.32.8",
     "three": "^0.185.1"
   },
   "scripts": {
+    "dev": "vite",
     "predeploy": "npm run build",
-    "start": "node fetch.js && react-scripts start",
-    "build": "node fetch.js && react-scripts build",
-    "deploy": "gh-pages -b master -d build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "format": "prettier --write \"./**/*.{js,css,json,scss}\"",
-    "check-format": "prettier -c \"./**/*.{js,css,json,scss}\""
+    "start": "node fetch.js && vite",
+    "build": "node fetch.js && vite build && vite build --ssr src/entry-server.jsx --outDir dist/server && node scripts/prerender.js",
+    "preview": "vite preview",
+    "deploy": "gh-pages -b master -d dist/client",
+    "format": "prettier --write \"./**/*.{js,jsx,css,json,scss}\"",
+    "check-format": "prettier -c \"./**/*.{js,jsx,css,json,scss}\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -52,8 +48,10 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@vitejs/plugin-react": "^4.0.0",
+    "@vitejs/plugin-react-swc": "^4.3.1",
     "dotenv": "^8.2.0",
-    "prettier": "^2.3.1"
+    "prettier": "^2.3.1",
+    "vite": "^5.0.0"
   }
 }
