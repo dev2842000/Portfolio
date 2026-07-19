@@ -35,6 +35,7 @@ async function run() {
 
   fs.writeFileSync(path.join(root, "dist/client/index.html"), html);
   console.log("✓ Prerendered /");
+  process.exit(0);
 }
 
 run().catch(err => {
