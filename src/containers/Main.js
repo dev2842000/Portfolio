@@ -25,7 +25,6 @@ const Main = () => {
   );
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
-  const curtainRef = useRef(null);
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -35,13 +34,6 @@ const Main = () => {
     }
   }, []);
 
-  // Page curtain
-  useEffect(() => {
-    const t = setTimeout(() => {
-      if (curtainRef.current) curtainRef.current.classList.add("gone");
-    }, 280);
-    return () => clearTimeout(t);
-  }, [isShowingSplashAnimation]);
 
   // Scroll: progress bar + back-to-top
   useEffect(() => {
@@ -121,7 +113,6 @@ const Main = () => {
           <SplashScreen />
         ) : (
           <>
-            <div className="page-curtain" ref={curtainRef} />
             <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
             <Greeting />
             <TechMarquee />

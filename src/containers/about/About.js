@@ -8,14 +8,14 @@ export default function About() {
     <section id="about">
       <div className="si">
         <div className="about-layout">
-          <div className="about-img-col reveal-l">
+          <div className="about-img-col">
             <div className="about-img-frame">
               <img src={aboutPhoto} alt="Dev Kumar" />
             </div>
             <div className="about-img-accent" />
             <div className="about-img-accent2" />
           </div>
-          <div className="about-text-col reveal-r">
+          <div className="about-text-col">
             <p className="slabel">Who I Am</p>
             <h2 className="stitle">About Me</h2>
             <p className="ssub">Product engineer who owns problems end-to-end</p>
